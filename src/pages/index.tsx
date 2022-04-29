@@ -5,7 +5,7 @@ import { ButtonSave, Button } from '../components/buttons';
 import Masonry from 'react-masonry-css';
 import Sticky from 'react-sticky-el';
 import Header from '../components/Header';
-import { ShareButtonsContainer } from './styles';
+import { ShareButtonsContainer } from '../components/ShareButtons/ShareButtonsContainer';
 import { api } from '../services/api';
 import Head from 'next/head';
 import { useImages } from '../services/hooks/useImages';
