@@ -3,7 +3,7 @@ import { styled } from '@stitches/react';
 import { useCallback, useEffect, useState } from 'react';
 import { ButtonSave, Button } from '../components/buttons';
 import Masonry from 'react-masonry-css';
-import Sticky from 'react-sticky-el';
+
 import Header from '../components/Header';
 import { ShareButtonsContainer } from '../components/ShareButtons/ShareButtonsContainer';
 import { api } from '../services/api';
@@ -196,9 +196,8 @@ export default function Home() {
 			<Head>
 				<title>Ui clone Pinterest by Fillipe Augusto</title>
 			</Head>
-			<Sticky topOffset={30}>
-				<Header />
-			</Sticky>
+
+			<Header />
 
 			<div style={{ marginTop: '10px' }}>
 				<Masonry

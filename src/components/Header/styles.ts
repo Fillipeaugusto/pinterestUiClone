@@ -7,6 +7,7 @@ export const Container = styled('div', {
 	width: '100%',
 	flexDirection: 'column',
 	marginBottom: '0',
+	zIndex: '1',
 	display: 'flex',
 });
 
