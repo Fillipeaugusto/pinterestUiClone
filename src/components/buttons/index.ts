@@ -48,6 +48,88 @@ export const Button = styled('button', {
 					color: 'red',
 				},
 			},
+			share: {
+				height: 'auto',
+				width: 'auto',
+				cursor: 'pointer',
+				backgroundColor: 'gainsboro',
+				borderRadius: '9999px',
+				fontSize: '16px',
+				border: '0',
+				padding: '7px',
+				margin: '5px',
+				display: 'flex',
+				alignItems: 'center',
+				'&:hover': {
+					backgroundColor: '#efefef',
+				},
+			},
+			dots: {
+				height: 'auto',
+				width: 'auto',
+				cursor: 'pointer',
+				backgroundColor: 'gainsboro',
+				borderRadius: '9999px',
+				fontSize: '16px',
+				border: '0',
+				padding: '7px',
+				margin: '5px',
+				display: 'flex',
+				alignItems: 'center',
+				'&:hover': {
+					backgroundColor: '#efefef',
+				},
+			},
 		},
 	},
 });
+
+export const ButtonSave = styled('button', {
+	borderRadius: '24px',
+	fontSize: '16px',
+	border: '0',
+	paddingLeft: '16px',
+	paddingRight: '16px',
+	display: 'flex',
+	alignItems: 'center',
+	cursor: 'pointer',
+	whiteSpace: 'nowrap',
+	height: '48px',
+	minWidth: '60px',
+	flex: '0 0 auto',
+	backgroundColor: '#e60023',
+	'&:hover': {
+		backgroundColor: '#e60029',
+	},
+	color: '#fff',
+	fontWeight: 'bold',
+});
+
+// export const ButtonShare = styled('button', {
+// 	cursor: 'pointer',
+// 	'&:hover': {
+// 		backgroundColor: '#efefef',
+// 	},
+
+// 	backgroundColor: 'gainsboro',
+// 	borderRadius: '9999px',
+// 	fontSize: '16px',
+// 	border: '0',
+// 	padding: '7px',
+// 	margin: '5px',
+// 	display: 'flex',
+// 	alignItems: 'center',
+
+// 	variants: {
+// 		type: {
+// 			secondary: {
+// 				color: '#fff',
+// 				fontWeight: 'bold',
+// 				'&:hover': {
+// 					backgroundColor: '#efefef',
+// 					color: 'red',
+// 				},
+// 			},
+// 		},
+// 	},
+// });
