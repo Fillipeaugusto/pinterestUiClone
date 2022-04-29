@@ -6,7 +6,7 @@ import { globalStyles } from '../styles/global';
 globalStyles();
 import '../styles/test.css';
 import { queryClient } from '../services/queryClient';
-
+// import Sticky from 'react-sticky-el';
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<>
