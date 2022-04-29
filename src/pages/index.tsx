@@ -188,9 +188,6 @@ export default function Home() {
 		setSearchValue(searchValue);
 	}, []);
 
-	console.log(data?.photos?.photos);
-
-	console.log(data);
 	return (
 		<div>
 			<Head>
@@ -220,11 +217,11 @@ export default function Home() {
 									overflow: 'hidden',
 								}}
 								className="containerC"
-								key={image.src.original}
+								key={image.src.medium}
 							>
 								{image.type === 'video' ? (
 									<video
-										src={image.src.original}
+										src={image.src.medium}
 										// poster="https://i.pinimg.com/564x/73/0b/17/730b179626bce26fd7425564dc56b614.jpg"
 										autoPlay
 										muted
@@ -235,8 +232,9 @@ export default function Home() {
 									</video>
 								) : (
 									<img
-										src={image.src.original}
-										alt={image.src.original}
+										src={image.src.medium}
+										alt={image.src.medium}
+										// srcSet={image.src.original}
 										style={{ display: 'block', width: '100%', borderRadius: '15px' }}
 									/>
 								)}

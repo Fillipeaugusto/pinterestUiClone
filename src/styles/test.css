@@ -80,3 +80,21 @@
 .containerC:hover .shareButton {
 	opacity: 1;
 }
+
+.sticky {
+	z-index: 20 !important;
+	background-color: white !important;
+
+	-webkit-box-shadow: -3px 11px 14px -9px rgba(0, 0, 0, 0.39) !important;
+	box-shadow: -3px 11px 14px -9px rgba(0, 0, 0, 0.39) !important;
+}
+
+.blur-up {
+	-webkit-filter: blur(6px);
+	filter: blur(6px);
+	transition: filter 0.5s, -webkit-filter 0.5s;
+}
+.blur-up.lazyloaded {
+	-webkit-filter: blur(0);
+	filter: blur(0);
+}
