@@ -21,13 +21,13 @@ type GetBarbershopsResponse = {
 async function getData({ searchParam = '' }) {
 	if (searchParam !== '') {
 		const response = await api.get(
-			`https://api.pexels.com/v1/curated?page=1&per_page=100/${searchParam}`
+			`https://api.pexels.com/v1/curated?page=1&per_page=4/${searchParam}`
 		);
 		const photos = response.data;
 		return { photos };
 	} else {
 		const response = await api.get(
-			`https://api.pexels.com/v1/curated?page=1&per_page=100`
+			`https://api.pexels.com/v1/curated?page=1&per_page=80`
 		);
 		const photos = response.data;
 		return { photos };
@@ -37,6 +37,5 @@ async function getData({ searchParam = '' }) {
 export function useImages(searchParam = '') {
 	return useQuery(['photos', searchParam], () => getData({ searchParam }), {
 		staleTime: 1000 * 60 * 60 * 24,
-		cacheTime: 1000 * 60 * 60 * 24,
 	});
 }
