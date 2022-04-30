@@ -44,6 +44,6 @@ async function getData({ searchParam = '' }) {
 
 export function useImages(searchParam = '') {
 	return useQuery(['photos', searchParam], () => getData({ searchParam }), {
-		staleTime: 1000 * 60 * 60 * 24,
+		staleTime: 1000 * 100,
 	});
 }

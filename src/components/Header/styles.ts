@@ -42,12 +42,21 @@ export const Svg = styled('svg', {
 });
 
 export const SeachContainer = styled('div', {
-	minWidth: '407px',
+	// minWidth: '407px',
 	flex: '1 1 auto',
 	minHeight: '0',
 	paddingLeft: '8px',
 	paddingRight: '8px',
 	display: 'block',
+
+	variants: {
+		modal: {
+			primary: {
+				width: '100%',
+				marginTop: '10px',
+			},
+		},
+	},
 });
 export const SeachWrapper = styled('div', {
 	height: '48px',
@@ -58,6 +67,17 @@ export const SeachWrapper = styled('div', {
 
 	'&:hover': {
 		backgroundColor: '#ddd',
+	},
+
+	variants: {
+		search: {
+			primary: {
+				backgroundColor: 'transparent',
+				'&:hover': {
+					backgroundColor: 'transparent',
+				},
+			},
+		},
 	},
 });
 
@@ -82,6 +102,17 @@ export const InputContainer = styled('div', {
 	position: 'relative',
 	display: 'flex',
 	flexDirection: 'row',
+	variants: {
+		search: {
+			primary: {
+				border: '2px solid #ddd',
+				borderRadius: '24px',
+				'&:hover': {
+					borderColor: '#cdcdcd',
+				},
+			},
+		},
+	},
 });
 
 export const SearchIconContainer = styled('div', {

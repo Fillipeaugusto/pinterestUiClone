@@ -105,6 +105,25 @@ export const ButtonSave = styled('button', {
 	fontWeight: 'bold',
 });
 
+export const ButtonModal = styled('button', {
+	display: 'flex',
+	alignItems: 'center',
+	justifyContent: 'flex-start',
+	paddingLeft: '10px',
+	padding: '8px',
+	backgroundColor: 'transparent',
+	border: 'none',
+	borderRadius: '10px',
+	fontSize: '16px',
+	marginTop: '10px',
+
+	'&:hover': {
+		backgroundColor: '#ddd',
+	},
+
+	fontWeight: 'bold',
+});
+
 // export const ButtonShare = styled('button', {
 // 	cursor: 'pointer',
 // 	'&:hover': {
