@@ -152,7 +152,7 @@ const StyledFallback = styled(AvatarPrimitive.Fallback, {
 	backgroundColor: '#efefef',
 	color: 'black',
 	lineHeight: 1,
-	fontWeight: 100,
+	fontWeight: 300,
 	'&hover': {
 		backgroundColor: 'none',
 	},

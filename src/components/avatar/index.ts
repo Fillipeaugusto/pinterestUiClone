@@ -14,6 +14,16 @@ export const StyledAvatar = styled(AvatarPrimitive.Root, {
 	cursor: 'pointer',
 	margin: '15px',
 	backgroundColor: '#efefef',
+
+	variants: {
+		type: {
+			bold: {
+				fontSize: '20px',
+				fontWeight: 'bold',
+				marginBottom: '30px',
+			},
+		},
+	},
 });
 
 export const StyledContainerAvatar = styled('div', {

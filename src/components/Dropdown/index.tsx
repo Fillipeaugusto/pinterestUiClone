@@ -7,6 +7,8 @@ import {
 	ChevronRightIcon,
 } from '@radix-ui/react-icons';
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
+import { ButtonModal } from '../buttons';
+import { StyledAvatar, StyledContainerAvatar } from '../avatar';
 
 const slideUpAndFade = keyframes({
 	'0%': { opacity: 0, transform: 'translateY(2px)' },
@@ -29,15 +31,15 @@ const slideLeftAndFade = keyframes({
 });
 
 const StyledContent = styled(DropdownMenuPrimitive.Content, {
-	minWidth: '360px',
+	width: 'auto',
 	marginTop: '-6px',
 	backgroundColor: 'white',
-	borderRadius: '16px',
+	borderRadius: '20px',
 	display: 'flex',
 	flexDirection: 'column',
-	overflow: 'auto',
-	minHeight: '40px',
+	height: 'auto',
 	padding: 5,
+
 	boxShadow:
 		'0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2)',
 	'@media (prefers-reduced-motion: no-preference)': {
@@ -58,24 +60,51 @@ const itemStyles = {
 	all: 'unset',
 	fontSize: 13,
 	lineHeight: 1,
-	color: violet.violet11,
-	borderRadius: 3,
+
+	// marginBottom: '10px',
+	'&hover': {
+		backgroundColor: 'black',
+	},
 	display: 'flex',
 	alignItems: 'center',
-	height: 25,
-	padding: '0 5px',
+	justifyContent: 'flex-start',
+	// height: 25,
+	// width: '306px',
 	position: 'relative',
-	paddingLeft: 25,
+	// margin: '10px',
 	userSelect: 'none',
-
+	marginBottom: '5px',
 	'&[data-disabled]': {
 		color: mauve.mauve8,
 		pointerEvents: 'none',
 	},
 
-	'&:focus': {
-		backgroundColor: violet.violet9,
-		color: violet.violet1,
+	variants: {
+		type: {
+			big: {
+				all: 'unset',
+				fontSize: 13,
+				lineHeight: 1,
+
+				'&hover': {
+					backgroundColor: 'black',
+				},
+				display: 'flex',
+				alignItems: 'center',
+				justifyContent: 'flex-start',
+				// height: 25,
+				width: '306px',
+				position: 'relative',
+				margin: '10px',
+				marginBottom: '0px',
+				userSelect: 'none',
+
+				'&[data-disabled]': {
+					color: mauve.mauve8,
+					pointerEvents: 'none',
+				},
+			},
+		},
 	},
 };
 
@@ -89,7 +118,7 @@ const StyledRadioItem = styled(DropdownMenuPrimitive.RadioItem, {
 const StyledTriggerItem = styled(DropdownMenuPrimitive.TriggerItem, {
 	'&[data-state="open"]': {
 		backgroundColor: violet.violet4,
-		color: violet.violet11,
+		// color: violet.violet11,
 	},
 	...itemStyles,
 });
@@ -103,7 +132,7 @@ const StyledLabel = styled(DropdownMenuPrimitive.Label, {
 
 const StyledSeparator = styled(DropdownMenuPrimitive.Separator, {
 	height: 1,
-	backgroundColor: violet.violet6,
+	// backgroundColor: violet.violet6,
 	margin: 5,
 });
 
@@ -190,68 +219,102 @@ export const DropdownMenuDemo = () => {
 				</DropdownMenuTrigger>
 
 				<DropdownMenuContent sideOffset={5}>
+					<small style={{ marginLeft: '18px', marginTop: '10px' }}>
+						Currently in
+					</small>
+					<DropdownMenuItem type="big">
+						<ButtonModal type="big">
+							{/* <StyledContainerAvatar> */}
+							<StyledAvatar type="bold">F</StyledAvatar>
+							{/* </StyledContainerAvatar> */}
+							<div
+								style={{
+									display: 'flex',
+									alignItems: 'flex-start',
+									justifyContent: 'center',
+									flexDirection: 'column',
+								}}
+							>
+								<h4>Fillipe Augusto</h4>
+								<small style={{ fontWeight: '300' }}>Personal</small>
+								<small style={{ fontWeight: '300' }}>
+									fillipeaugustoribeiro@gma...
+								</small>
+							</div>
+						</ButtonModal>
+					</DropdownMenuItem>
+					<small style={{ marginLeft: '18px', marginTop: '10px' }}>
+						Your accounts
+					</small>
+					<DropdownMenuItem type="big">
+						<ButtonModal type="big">
+							{/* <StyledContainerAvatar> */}
+							<StyledAvatar type="bold">F</StyledAvatar>
+							{/* </StyledContainerAvatar> */}
+							<div
+								style={{
+									display: 'flex',
+									alignItems: 'flex-start',
+									justifyContent: 'center',
+									flexDirection: 'column',
+								}}
+							>
+								<h4>Fillipe Augusto</h4>
+								<small style={{ fontWeight: '300' }}> Business</small>
+							</div>
+						</ButtonModal>
+					</DropdownMenuItem>
+					<div style={{ marginBottom: '10px' }}>
+						<DropdownMenuItem>
+							<ButtonModal type="modal">Add account</ButtonModal>
+						</DropdownMenuItem>
+						<DropdownMenuItem>
+							<ButtonModal type="modal">Convert to business</ButtonModal>
+						</DropdownMenuItem>
+					</div>
+					<small style={{ marginLeft: '8px' }}>More options</small>
 					<DropdownMenuItem>
-						New Tab <RightSlot>⌘+T</RightSlot>
+						<ButtonModal type="modal">Settings</ButtonModal>
 					</DropdownMenuItem>
 					<DropdownMenuItem>
-						New Window <RightSlot>⌘+N</RightSlot>
+						<ButtonModal type="modal">Tune your home feed</ButtonModal>
 					</DropdownMenuItem>
-					<DropdownMenuItem disabled>
-						New Private Window <RightSlot>⇧+⌘+N</RightSlot>
+					<DropdownMenuItem>
+						<ButtonModal type="modal">Install the Windows app</ButtonModal>
 					</DropdownMenuItem>
-					<DropdownMenu>
-						<DropdownMenuTriggerItem>
-							More Tools
-							<RightSlot>
-								<ChevronRightIcon />
-							</RightSlot>
-						</DropdownMenuTriggerItem>
-						<DropdownMenuContent sideOffset={2} alignOffset={-5}>
-							<DropdownMenuItem>
-								Save Page As… <RightSlot>⌘+S</RightSlot>
-							</DropdownMenuItem>
-							<DropdownMenuItem>Create Shortcut…</DropdownMenuItem>
-							<DropdownMenuItem>Name Window…</DropdownMenuItem>
-							<DropdownMenuSeparator />
-							<DropdownMenuItem>Developer Tools</DropdownMenuItem>
-						</DropdownMenuContent>
-					</DropdownMenu>
-					<DropdownMenuSeparator />
-					<DropdownMenuCheckboxItem
-						checked={bookmarksChecked}
-						onCheckedChange={setBookmarksChecked}
-					>
-						<DropdownMenuItemIndicator>
-							<CheckIcon />
-						</DropdownMenuItemIndicator>
-						Show Bookmarks <RightSlot>⌘+B</RightSlot>
-					</DropdownMenuCheckboxItem>
-					<DropdownMenuCheckboxItem
-						checked={urlsChecked}
-						onCheckedChange={setUrlsChecked}
-					>
-						<DropdownMenuItemIndicator>
-							<CheckIcon />
-						</DropdownMenuItemIndicator>
-						Show Full URLs
-					</DropdownMenuCheckboxItem>
-					<DropdownMenuSeparator />
-					<DropdownMenuLabel>People</DropdownMenuLabel>
-					<DropdownMenuRadioGroup value={person} onValueChange={setPerson}>
-						<DropdownMenuRadioItem value="pedro">
-							<DropdownMenuItemIndicator>
-								<DotFilledIcon />
-							</DropdownMenuItemIndicator>
-							Pedro Duarte
-						</DropdownMenuRadioItem>
-						<DropdownMenuRadioItem value="colm">
-							<DropdownMenuItemIndicator>
-								<DotFilledIcon />
-							</DropdownMenuItemIndicator>
-							Colm Tuite
-						</DropdownMenuRadioItem>
-					</DropdownMenuRadioGroup>
-					{/* <DropdownMenuArrow offset={12} /> */}
+					<DropdownMenuItem>
+						<ButtonModal type="modal">
+							<span>Get help</span>
+							<svg
+								className="Hn_ gUZ pBj U9O kVc"
+								height="12"
+								width="12"
+								viewBox="0 0 24 24"
+								aria-label=", External"
+								role="img"
+							>
+								<path d="M4.928 1a2.357 2.357 0 1 0 0 4.714h10.024L1.69 18.976a2.36 2.36 0 0 0 0 3.334 2.35 2.35 0 0 0 1.668.69c.603 0 1.206-.229 1.667-.69l13.26-13.263v10.024a2.358 2.358 0 1 0 4.715 0V1H4.928Z"></path>
+							</svg>
+						</ButtonModal>
+					</DropdownMenuItem>
+					<DropdownMenuItem>
+						<ButtonModal type="header">
+							<span>See terms and privacy</span>
+							<svg
+								className="Hn_ gUZ pBj U9O kVc"
+								height="12"
+								width="12"
+								viewBox="0 0 24 24"
+								aria-label=", External"
+								role="img"
+							>
+								<path d="M4.928 1a2.357 2.357 0 1 0 0 4.714h10.024L1.69 18.976a2.36 2.36 0 0 0 0 3.334 2.35 2.35 0 0 0 1.668.69c.603 0 1.206-.229 1.667-.69l13.26-13.263v10.024a2.358 2.358 0 1 0 4.715 0V1H4.928Z"></path>
+							</svg>
+						</ButtonModal>
+					</DropdownMenuItem>
+					<DropdownMenuItem>
+						<ButtonModal type="header">Log out</ButtonModal>
+					</DropdownMenuItem>
 				</DropdownMenuContent>
 			</DropdownMenu>
 		</Box>

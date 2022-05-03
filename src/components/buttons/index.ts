@@ -116,12 +116,74 @@ export const ButtonModal = styled('button', {
 	borderRadius: '10px',
 	fontSize: '16px',
 	marginTop: '10px',
+	width: '100%',
 
 	'&:hover': {
 		backgroundColor: '#ddd',
 	},
 
 	fontWeight: 'bold',
+
+	variants: {
+		type: {
+			header: {
+				display: 'flex',
+				alignItems: 'center',
+				justifyContent: 'space-between',
+
+				// padding: '8px',
+				backgroundColor: 'transparent',
+				border: 'none',
+				borderRadius: '10px',
+				fontSize: '16px',
+				marginTop: '10px',
+				width: '100%',
+
+				'&:hover': {
+					backgroundColor: '#ddd',
+					// border: '4px solid #0074e8',
+				},
+
+				fontWeight: 'bold',
+			},
+			big: {
+				display: 'flex',
+				alignItems: 'center',
+				// justifyContent: 'flex-start',
+
+				padding: '2px',
+				backgroundColor: 'transparent',
+				border: 'none',
+				borderRadius: '10px',
+				fontSize: '16px',
+				marginTop: '10px',
+				width: '100%',
+
+				'&:hover': {
+					backgroundColor: '#ddd',
+					// border: '4px solid #0074e8',
+				},
+
+				fontWeight: 'bold',
+			},
+			modal: {
+				display: 'flex',
+				alignItems: 'center',
+				justifyContent: 'space-between',
+				backgroundColor: 'transparent',
+				border: 'none',
+				borderRadius: '10px',
+				fontWeight: 'bold',
+				fontSize: '16px',
+				// marginTop: '10px',
+				paddingTop: '8px',
+				width: '100%',
+				'&:hover': {
+					backgroundColor: '#ddd',
+				},
+			},
+		},
+	},
 });
 
 // export const ButtonShare = styled('button', {
