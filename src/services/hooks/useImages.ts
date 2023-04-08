@@ -1,6 +1,12 @@
 import { useQuery } from 'react-query';
 import { api } from '../../services/api';
 
+import { createClient } from 'pexels';
+
+const client = createClient(
+	'563492ad6f917000010000014859f3b1e600420b90a85202f40176bb'
+);
+
 type Photo = {
 	src: {
 		original: string;
@@ -19,25 +25,26 @@ type GetBarbershopsResponse = {
 };
 
 async function getData({ searchParam = '' }) {
-	let config = {
-		headers: {
-			Authorization:
-				'Bearer ' + '563492ad6f917000010000014859f3b1e600420b90a85202f40176bb',
-		},
-	};
 	if (searchParam !== '') {
-		const response = await api.get(
-			`https://api.pexels.com/v1/curated?page=1&per_page=4/${searchParam}`,
-			config
-		);
-		const photos = response.data;
+		const photos = await client.photos
+			.curated({ per_page: 100, page: 1 })
+			.then((photos) => {
+				return photos.photos;
+			});
+
 		return { photos };
 	} else {
-		const response = await api.get(
-			`https://api.pexels.com/v1/curated?page=20&per_page=80`,
-			config
-		);
-		const photos = response.data;
+		// const response = await api.get(
+		// 	`https://api.pexels.com/v1/curated?page=20&per_page=80`,
+		// 	config
+		// );
+
+		const photos = await client.photos
+			.curated({ per_page: 100, page: 1 })
+			.then((photos) => {
+				return photos.photos;
+			});
+
 		return { photos };
 	}
 }

@@ -43,7 +43,7 @@ export default function Home() {
 	const [arrayData, setArrayData] = useState([]);
 
 	const { data, isLoading, error, isFetching } = useImages(searchValue);
-
+	console.log(data);
 	const VideoData = [
 		{
 			src: 'https://player.vimeo.com/external/551770838.sd.mp4?s=1351165ed743a52827fb5d156d6375180ee5d049&profile_id=165&oauth2_token_id=57447761',
@@ -88,7 +88,7 @@ export default function Home() {
 	];
 	useEffect(() => {
 		if (data) {
-			const mixArray = data?.photos.photos.concat(VideoData);
+			const mixArray = data?.photos.concat(VideoData);
 			setArrayData(mixArray.sort(() => Math.random() - 0.5));
 		}
 	}, [data]);
